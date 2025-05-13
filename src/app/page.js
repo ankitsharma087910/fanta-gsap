@@ -11,19 +11,19 @@ export default function Home() {
           src={"/orange2.png"}
           height={100}
           width={100}
-          className="absolute top-[6%] left-[28%] w-[15%] "
+          className="absolute top-[6%] left-[32%] w-[15%] "
         />
         <Image
           src={"/fanta.png"}
           height={100}
           width={100}
-          className="absolute w-[40%]  left-[26%] z-10"
+          className="absolute w-[40%]  left-[30%] z-10"
         />
         <Image
           src={"/orange.webp"}
           height={100}
           width={100}
-          className="absolute w-[20%] z-20 bottom-[5%] left-[44%]"
+          className="absolute w-[20%] z-20 bottom-[5%] left-[49%]"
         />
         <Image
           src={"/leaf.webp"}
