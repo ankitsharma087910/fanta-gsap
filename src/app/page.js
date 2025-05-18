@@ -68,31 +68,38 @@ export default function Home() {
       "orange"
     );
 
-    // let tl2 = gsap.timeline({
-    //   scrollTrigger:{
-    //     trigger:".three",
-    //     start:"0% 95%",
-    //     end:"70% 50%",
-    //     srub:1,
-    //     markers:true
-    //   }
-    // })
-    // tl2.to(".fanta",{
-    //   top:"180%",
-    //   left:"50%"
-    // },'ca')
+    let tl2 = gsap.timeline({
+      scrollTrigger:{
+        trigger:".three",
+        start:"0% 95%",
+        end:"70% 50%",
+        scrub:1,
+        markers:true
+      }
+    })
+    tl2.to(
+      ".fanta",
+      {
+        width: "36%",
+        top: "210%",
+        left: "33%",
+        zIndex: "300",
+        overwrite:"auto"
+      },
+      "ca"
+    );
 
-    
-    // tl.to(
-    //   ".orange2",
-    //   {
-    //     top: "200%",
-    //     left: "23%",
-    //   },
-    //   "ca"
-    // );
-
-
+    tl2.to(
+      ".orange2",
+      {
+        top: "202%",
+        left: "42%",
+        width: "18%",
+        zIndex: "200",
+        overwrite: "auto",
+      },
+      "ca"
+    );
    })
 
   return (
