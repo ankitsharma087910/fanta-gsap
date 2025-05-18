@@ -1,7 +1,100 @@
+"use client"
+
 import Image from "next/image";
 import Navbar from "./components/Navbar";
-
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 export default function Home() {
+
+   gsap.registerPlugin(useGSAP);
+   gsap.registerPlugin(ScrollTrigger)
+
+   useGSAP(()=>{
+    let tl = gsap.timeline({
+      scrollTrigger:{
+        trigger:".two",
+        start:"-90%  95%",
+        end:"70% 50%",
+        scrub:1,
+        markers:true
+      }
+    });
+    tl.to(
+      ".fanta",
+      {
+        top: "120%",
+        left: "0%",
+      },
+      "orange"
+    );
+
+    tl.to(
+      ".orange2",
+      {
+        top: "160%",
+        left: "23%",
+      },
+      "orange"
+    );
+
+    tl.to(
+      ".orange",
+      {
+        width:"15%",
+        top: "170%",
+        left: "80%",
+      },
+      "orange"
+    );
+
+    tl.to(
+      ".leaf",
+      {
+        top: "110%",
+        rotate: "130deg",
+        left: "70%",
+      },
+      "orange"
+    );
+
+    tl.to(
+      ".leaf2",
+      {
+        top: "110%",
+        rotate: "130deg",
+        left: "0%",
+      },
+      "orange"
+    );
+
+    // let tl2 = gsap.timeline({
+    //   scrollTrigger:{
+    //     trigger:".three",
+    //     start:"0% 95%",
+    //     end:"70% 50%",
+    //     srub:1,
+    //     markers:true
+    //   }
+    // })
+    // tl2.to(".fanta",{
+    //   top:"180%",
+    //   left:"50%"
+    // },'ca')
+
+    
+    // tl.to(
+    //   ".orange2",
+    //   {
+    //     top: "200%",
+    //     left: "23%",
+    //   },
+    //   "ca"
+    // );
+
+
+   })
+
   return (
     <div className="bg-amber-500">
       <Navbar />
@@ -12,42 +105,42 @@ export default function Home() {
           src={"/orange2.png"}
           height={100}
           width={100}
-          className="absolute top-[6%] left-[32%] w-[15%] "
+          className="absolute orange2 top-[6%] left-[32%] w-[15%] "
         />
         <Image
           src={"/fanta.png"}
           height={100}
           width={100}
-          className="absolute w-[40%]  left-[30%] z-10"
+          className="absolute fanta w-[40%]  left-[30%] z-10"
         />
         <Image
           src={"/orange.webp"}
           height={100}
           width={100}
-          className="absolute w-[20%] z-20 bottom-[5%] left-[49%]"
+          className="absolute orange w-[20%] z-20 bottom-[5%] left-[49%]"
         />
         <Image
           src={"/leaf.webp"}
           height={100}
           width={100}
-          className="absolute rotate-[50deg] top-[10%] w-[15%] left-[8%]"
+          className="absolute leaf rotate-[50deg] top-[10%] w-[15%] left-[8%]"
         />
         <Image
           src={"/leaf2.png"}
           height={100}
           width={100}
-          className="absolute rotate-[280deg] bottom-[7%] w-[12%] right-[3%]"
+          className="absolute leaf2 rotate-[280deg] bottom-[7%] w-[12%] right-[3%]"
         />
         <Image
           src={"/coconoutleaf.png"}
           height={100}
           width={100}
-          className="absolute top-[5%] right-[8%] w-[15%]"
+          className="absolute coconutleaf top-[5%] right-[8%] w-[15%]"
         />
       </div>
       {/* section 2 */}
 
-      <div className="flex w-full h-screen bg-amber-700">
+      <div className="flex two  w-full h-screen bg-amber-700">
         <div className="w-1/2 flex h-full  justify-center items-start gap-[5vh]">
           <svg
             viewBox="0 0 200 200"
@@ -80,7 +173,7 @@ export default function Home() {
       </div>
 
       {/* section 3 */}
-      <div class="flex h-screen w-full justify-between items-center p-20 ">
+      <div class="flex three h-screen w-full justify-between items-center p-20 ">
         <div className="h-[75vh] bg-white w-[25%] rounded-2xl relative">
           <Image
             src={"/lemon.webp"}
@@ -104,12 +197,15 @@ export default function Home() {
           </button>
         </div>
         <div className="h-[75vh] bg-white w-[25%] rounded-2xl relative">
-          <h1>Fanta</h1>
-          <button>Buy Now</button>
+          <h1 className="text-3xl absolute bottom-[20%] left-[35%] font-semibold">            Fanta
+          </h1>
+          <button className="absolute bottom-[6%] text-white cursor-pointer left-[35%] text-lg rounded-4xl bg-amber-500 p-3">
+            Buy Now
+          </button>
         </div>
         <div className="h-[75vh] bg-white w-[25%] rounded-2xl relative">
           <Image
-            className="absolute left-[2%] z-0 w-full top-[-25%]"
+            className="absolute left-[2%] z-0 w-full top-[-22%]"
             width={100}
             height={100}
             src={"/lemon.webp"}
@@ -120,7 +216,7 @@ export default function Home() {
             height={100}
             src={"/pepsi.png"}
             alt=""
-            className="w-[90%] h-[70vh] absolute z-10 top-[-16%] left-[8%]"
+            className="w-[90%] h-[70vh] absolute z-10 top-[-14%] left-[8%]"
           />
           <h1 className="text-3xl absolute bottom-[20%] left-[35%] font-semibold">
             Pepsi
